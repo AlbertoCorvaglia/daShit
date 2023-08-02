@@ -13,7 +13,7 @@ To start daShit run:
 ```bash
 cd daShit/
 chmod +x setup.sh #get permission to execute
-./start.sh #starts daShit
+./setup.sh #starts daShit
 rm setup.sh #remove the setup
 ```
 
