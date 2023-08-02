@@ -8,6 +8,12 @@ Minimal Dashboard with admin authentication to monitor your server real time sta
 
 ## Deployment
 
+**Important**: daShit uses `screen` to run in the background. If you don't have it installed run:
+
+```bash
+sudo apt-get install screen
+```
+
 To start daShit run:
 
 ```bash
