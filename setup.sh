@@ -6,6 +6,8 @@ read -p "Enter the ADMIN_USER: " ADMIN_USER
 read -p "Enter the ADMIN_PASSWORD: " ADMIN_PASSWORD
 read -p "Enter the port number to deploy daShit (e.g., 2500): " PORT
 
+npm install
+
 # Create the env_variables.sh file
 cat << EOF > env_variables.sh
 #!/bin/bash
