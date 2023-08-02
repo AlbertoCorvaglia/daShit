@@ -13,7 +13,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "apiStart": "nodemon api.js",
     "serverStart": "nodemon server.js"
   },
   "keywords": [],
