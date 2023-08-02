@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body,
+  html{
+    height: 100vh;
+  }
+  
+  body{
+    background-color: #2E3440;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  h1{
+    margin-bottom: 10vh;
+    color: #ECEFF4;
+  }
+  
+  .main{
+    background-color: #4C566A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+    height: 70vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .userInput{
+    margin-bottom: 5vh;
+  }
+
+  .wrongCredential{
+    margin-top: 2vh;
+    text-align: center;
+  }
+  
+  label {
+    color: #ECEFF4;
+    font-size: 1.2rem;
+  }
+  
+  input[type="text"],
+  input[type="password"]{
+    border: 1px solid #D8DEE9;
+    border-radius: 3px;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #E5E9F0;
+    background-color: #3B4252;
+  }
+  
+  button{
+    background-color: #5E81AC;
+    color: #ECEFF4;
+    border: none;
+    border-radius: 3px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button[type="submit"]:hover{
+    background-color: #81A1C1;
+    transition: all 0.2s ease-in-out;
+  }

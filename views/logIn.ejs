@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/logIn/style.css">
+    <script defer src="/logIn/script.js"></script>
+    <title>daShit - Log In</title>
+
+</head>
+<body> 
+    <div class="main"> 
+        <h1>daShit!</h1>   
+        <form action="/logIn" method="POST" class="form">
+            <div class="userInput">
+                <label for="username">Username: </label>
+                <br>
+                <input name="username" type="text" placeholder="username">
+            </div>
+            <div class="userInput">
+                <label for="password">Password: </label>
+                <br>
+                <input name="password" type="password" placeholder="password">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <% if (locals.wrongCredential) { %>
+        <h3 class="wrongCredential">Wrong Credential!!!</h3>
+        <% } %>
+    </div>
+    
+</body>
+</html>
