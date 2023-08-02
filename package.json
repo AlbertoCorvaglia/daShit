@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serverStart": "nodemon server.js"
+    "serverStart": "node index.js"
   },
   "keywords": [],
   "author": "",

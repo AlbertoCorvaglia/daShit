@@ -12,8 +12,9 @@ To deploy this project run in the daShit directory:
 
 ```bash
 cd daShit/
-chmod +x start.sh #get permission to execute
+chmod +x setup.sh #get permission to execute
 ./start.sh #starts daShit
+rm setup.sh #remove the setup
 ```
 
 

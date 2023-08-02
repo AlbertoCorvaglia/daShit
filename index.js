@@ -70,5 +70,5 @@ const api = require("./routes/api");
 
 
 app.use("/api", api);
-
-app.listen(2500, () => console.log("app listening on 2500"));
+const PORT = process.env.DASHIT_PORT;
+app.listen(PORT, () => console.log(`App listening on ${PORT}`));
