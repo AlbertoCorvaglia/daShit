@@ -8,7 +8,7 @@ Minimal Dashboard with admin authentication to monitor your server real time sta
 
 ## Deployment
 
-To deploy this project run in the daShit directory:
+To start daShit run:
 
 ```bash
 cd daShit/
