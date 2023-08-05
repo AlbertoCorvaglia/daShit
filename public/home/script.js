@@ -2,7 +2,7 @@ async function main() {
   let errCount = 0;
   if(errCount < 10){
     try {
-      const data = await fetch("https://test.alogen.eu.org/api", {
+      const data = await fetch(`${window.location.href}api`, {
         method: "POST",
         body: JSON.stringify({ token: "auth" }),
         headers: {
