@@ -1,4 +1,3 @@
 node_modules/
 docker/
 .env
-startDashit.sh
