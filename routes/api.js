@@ -68,8 +68,14 @@ router.get("/", async (req, res) => {
     console.log(statistics);
     res.json({ ...statistics, user: decoded.username });
   } catch (err) {
-    console.error(err);
-    res.status(401).send("Unauthorized");
+    if(token == process.env.AUTH_TOKEN){
+      const statistics = await sendStat();
+      console.log(statistics);
+      res.json({ ...statistics, user: decoded.username });
+    }else{
+      console.error(err);
+      res.status(401).send("Unauthorized");
+    }
   }
 });
 
