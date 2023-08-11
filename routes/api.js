@@ -54,6 +54,7 @@ const cpuPercentage = await getCpuPercentage();
       hours: Math.floor(uptimeInSeconds / 3600) % 24,
       minutes: Math.floor(uptimeInSeconds / 60) % 60,
       seconds: Math.floor(uptimeInSeconds % 60),
+      osUptime: os.uptime()
     },
   };
 }
