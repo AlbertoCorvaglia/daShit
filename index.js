@@ -27,9 +27,9 @@ app.get("/", (req, res) => {
     const decoded = jwt.verify(token, secret);
     res.render("home");
   } catch (err) {
-    console.error(err);
-    res.redirect("/logIn");
-  }
+      console.error(err);
+      res.redirect("/logIn");
+   }
 });
 
 

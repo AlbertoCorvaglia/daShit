@@ -2,7 +2,8 @@ const os = require('os');
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const router = express.Router();
 router.use(cookieParser());
 router.use(express.static("public"));
@@ -60,38 +61,39 @@ const cpuPercentage = await getCpuPercentage();
 }
 
 router.get("/", async (req, res) => {
-  const token = req.cookies.token;
-  const secret = process.env.JWT_SECRET; // or any other method to retrieve the secret
-  try {
-    const decoded = jwt.verify(token, secret);
-    const statistics = await sendStat();
-    console.log(statistics);
-    res.json({ ...statistics, user: decoded.username });
-  } catch (err) {
-    if(token == process.env.AUTH_TOKEN){
-      const statistics = await sendStat();
-      console.log(statistics);
-      res.json({ ...statistics, user: decoded.username });
-    }else{
-      console.error(err);
-      res.status(401).send("Unauthorized");
-    }
-  }
+  handleRequest(req, res);
 });
 
 router.post("/", async (req, res) => {
+  handleRequest(req, res);
+});
+
+async function handleRequest(req, res) {
   const token = req.cookies.token;
   const secret = process.env.JWT_SECRET; // or any other method to retrieve the secret
   try {
     const decoded = jwt.verify(token, secret);
     const statistics = await sendStat();
     console.log(statistics);
-    res.json({ ...statistics, user: decoded.username });
+    res.json({ ...statistics });
   } catch (err) {
-    console.error(err);
-    res.status(401).send("Unauthorized");
+    if (token == process.env.AUTH_TOKEN) {
+      const statistics = await sendStat();
+      console.log(statistics);
+      res.json({ ...statistics });
+    } else {
+      console.log(`Auth Token: ${process.env.AUTH_TOKEN}`);
+      if (err.name == "JsonWebTokenError") {
+        console.error("Cookie Not set");
+      } else {
+        console.error(err.name);
+      }
+      res.status(401).send("Unauthorized");
+    }
   }
-});
+}
+
+module.exports = router;
 
 
 module.exports = router;
