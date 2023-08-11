@@ -41,7 +41,8 @@ async function displayStats() {
 
       // Display CPU and RAM information
       cpu.innerText = `${data.cpu.percentage}%`;
-      ram.innerText = `${data.ram.freeMemory}/${data.ram.totalMemory}GB (${((data.ram.freeMemory / data.ram.totalMemory) * 100).toFixed(2)}%)`;
+      const usedRam = (data.ram.totalMemory - data.ram.freeMemory).toFixed(2);
+      ram.innerText = `${usedRam}/${data.ram.totalMemory}GB (${((usedRam / data.ram.totalMemory) * 100).toFixed(2)}%)`;
     }
   } else {
     console.log("API ERROR");

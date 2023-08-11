@@ -43,7 +43,7 @@ const cpuPercentage = await getCpuPercentage();
   const totalMemory = (os.totalmem() / 1e9).toFixed(2);
   return {
     cpu: {
-      percentage: cpuPercentage
+      percentage: Math.ceil(cpuPercentage),
     },
     ram: {
       freeMemory: (os.freemem() / 1e9).toFixed(2),

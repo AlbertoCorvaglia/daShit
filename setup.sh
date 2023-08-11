@@ -40,6 +40,6 @@ EOF
 fi
 
 # Start daShit
-npm run serverStart > /dev/null 2>&1 &
+screen npm run serverStart > /dev/null 2>&1 &
 
 echo "daShit deployed on port $PORT"
