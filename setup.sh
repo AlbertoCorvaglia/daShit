@@ -19,7 +19,7 @@ read -p "Do you want to start daShit at boot? (y/n): " START_AT_BOOT
 
 if [ "$START_AT_BOOT" == "y" ]; then
     # Create a service file
-    cat << EOF > /etc/systemd/system/dashit.service
+    sudo cat << EOF > /etc/systemd/system/dashit.service
 [Unit]
 Description=daShit
 After=network.target
